@@ -35,7 +35,7 @@ namespace sendEmailApp.Controllers
             smtp.EnableSsl = true;
 
             smtp.Credentials = new System.Net.NetworkCredential("apikey",
-                "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");
+                "");
             smtp.Send(mm);
 
             ViewBag.Message = "The mail has been sent to " + mm.To + " Sucessfully!";
