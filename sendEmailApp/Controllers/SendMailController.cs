@@ -29,12 +29,13 @@ namespace sendEmailApp.Controllers
             mm.From = new MailAddress("noreply1.2.3replyno@gmail.com");
             mm.IsBodyHtml = false;
 
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            SmtpClient smtp = new SmtpClient("smtp.sendgrid.net");
             smtp.Port = 587;
             smtp.UseDefaultCredentials = true;
             smtp.EnableSsl = true;
 
-            smtp.Credentials = new System.Net.NetworkCredential("noreply1.2.3replyno@gmail.com", "jo!@#123Abc");
+            smtp.Credentials = new System.Net.NetworkCredential("apikey",
+                "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");
             smtp.Send(mm);
 
             ViewBag.Message = "The mail has been sent to " + mm.To + " Sucessfully!";
